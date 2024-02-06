@@ -17,4 +17,13 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-text, sans-serif);
+  color: var(--main-color);
+  background-color: var(--bg-color);
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+      font-family: 'Inter', sans-serif;
+  }
 }
