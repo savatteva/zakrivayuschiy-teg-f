@@ -12,3 +12,30 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes header-menu {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(4px);
+  }
+}
+
+.theme-menu__button:disabled::before {
+  animation: header-menu 0.5s infinite ease-in-out;
+}
+
+.theme-menu__button:hover,
+.theme-menu__button:disabled {
+  transition: color 0.3s;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  animation-name: filling;
+}

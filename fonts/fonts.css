@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'PressStart2P', sans-serif;
-  src: url(./PressStart2P-Regular.woff) format('woff');
+  font-family: 'PressStart2P';
+  src: url('./PressStart2P-Regular.woff') format('woff');
   font-weight: normal;
   font-display: swap;
 }
@@ -9,8 +9,14 @@
   font-family: 'Inter', sans-serif;
   src: 
     local('Inter'),
-    url(./Inter-Variable.woff2) format('woff2 supports variations'),
-      url('./PressStart2P-Regular.woff') format('woff2-variations');
+    url('./Inter-Variable.woff2') format('woff2 supports variations'),
+      url('./Inter-Variable.woff2') format('woff2-variations');
   font-display: swap;
   font-weight: 400 800;
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+      font-family: 'Inter', sans-serif; /*add variables*/
+  }
 }
