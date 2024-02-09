@@ -26,6 +26,10 @@ li {
   padding: 0;
 }
 
+dialog {
+  padding: 0;
+}
+
 a {
   color: inherit;
 }
