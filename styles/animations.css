@@ -24,7 +24,7 @@
 }
 
 .theme-menu__button:disabled::before {
-  animation: header-menu 0.5s infinite ease-in-out;
+  animation: header-menu 0.5s infinite ease-in-out alternate;
 }
 
 .theme-menu__button:hover,

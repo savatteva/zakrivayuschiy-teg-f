@@ -152,6 +152,10 @@
   background-color: var(--bg-color);
 }
 
+.button:hover::after {
+
+}
+
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
@@ -213,4 +217,70 @@
 
 dialog::backdrop {
   background-color: rgb(0, 0, 0, 0.75);
+}
+
+.heart {
+  inline-size: 27px;
+  block-size: 24px;
+}
+
+.core {
+  transition: fill 0.3s 0.03s linear;
+  fill: var(--bg-color);
+}
+
+.main-body {
+  transition: fill 0.3s 0.05s linear;
+  fill: var(--bg-color);
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--main-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--main-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:active .main-body,
+.card__icon-button:active .core,
+.card__icon-button:active .contour {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s linear;
+  fill: var(--heart-fill);
+  transform-origin: center;
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill);
+  transform-origin: center;
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill);
+  transform-origin: center;
+}
+
+.like-icon.is-liked .contour,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  animation: heart-scale 0.3s ease-in 0.1s 1 normal;
+}
+
+@keyframes heart-scale {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
 }
