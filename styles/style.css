@@ -297,7 +297,7 @@ dialog::backdrop {
 }
 
 .blur {
-  filter: blur(1px);
+  filter: blur(1px) grayscale();
 }
 
 .rotate {
@@ -346,5 +346,11 @@ dialog::backdrop {
   .theme-menu__button:disabled {
     color: var(--header-button-hover-color);
     transition: color 0.3s ease;
+  }
+}
+
+@media (width <= 768px) {
+  .page {
+    background-attachment: scroll;
   }
 }
