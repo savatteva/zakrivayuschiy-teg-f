@@ -351,3 +351,9 @@ dialog::backdrop {
     transition: color 0.3s ease;
   }
 }
+
+@media (width <= 768px) {
+  .page {
+    background-attachment: unset;
+  }
+}
