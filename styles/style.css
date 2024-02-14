@@ -73,6 +73,7 @@ body:has(dialog[open]) {
 .theme-menu__button:disabled {
   color: var(--header-button-hover-color);
   transition: color 0.3s ease;
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
@@ -99,10 +100,6 @@ body:has(dialog[open]) {
   transform: scaleX(1);
   transition: transform 0.3s ease-in-out;
   transform-origin: left;
-}
-
-.theme-menu__button:disabled {
-  pointer-events: none;
 }
 
 .theme-menu__button:before {
@@ -352,11 +349,5 @@ dialog::backdrop {
   .theme-menu__button:hover {
     color: var(--header-button-hover-color);
     transition: color 0.3s ease;
-  }
-}
-
-@media (width <= 768px) {
-  .page {
-    background-attachment: unset;
   }
 }
