@@ -1,41 +1,75 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
-
 @keyframes header-menu {
   from {
-    transform: translateX(0);
+    transform: translateX(-4px);
   }
 
   to {
-    transform: translateX(4px);
+    transform: translateX(0);
   }
 }
 
-.theme-menu__button:disabled::before {
-  animation: header-menu 0.5s infinite ease-in-out alternate;
+@keyframes heart-scale {
+  from {
+    scale: 1;
+    transform-origin: center;
+  }
+
+  to {
+    scale: 1.5;
+    transform-origin: center;
+  }
 }
 
-.theme-menu__button:hover,
-.theme-menu__button:disabled {
-  transition: color 0.3s;
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-.sparks {
-  opacity: 0;
+.core {
+  fill: var(--bg-color);
+  transition: fill 0.3s 0.03s linear;
 }
 
 .main-body {
-  animation-name: filling;
+  fill: var(--bg-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.sparks {
+  transition: opacity 0.1s linear;
+  opacity: 0;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--main-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:active .main-body,
+.card__icon-button:active .core,
+.card__icon-button:active .contour,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear;
+  fill: var(--heart-fill);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s linear;
+  fill: var(--heart-fill);
+}
+
+.like-icon.is-liked .contour,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  animation: heart-scale 0.3s ease-in 0.1s 1 normal;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1;
 }

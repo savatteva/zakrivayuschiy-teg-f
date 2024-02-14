@@ -1,15 +1,9 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
-
 :root.theme-dark {
   --main-color: #00CC14;
   --bg-color: #000000;
-  --font-wght-regular: 465;
-  --font-wght-bold: 785;
+  --button-hover-text: #00CC14;
+  --font-wght-regular: 'wght' 465;
+  --font-wght-bold: 'wght' 785;
   --header-button-hover-color: rgb(0, 122, 0, 0.6);
   --bg-image: 
   repeating-linear-gradient(
@@ -32,8 +26,8 @@
 :root.theme-light {
   --main-color: #000000;
   --bg-color: #FFFFFF;
-  --font-wght-regular: 400;
-  --font-wght-bold: 700;
+  --font-wght-regular: 'wght' 400;
+  --font-wght-bold: 'wght' 700;
   --header-button-hover-color: rgb(102,102,102, 0.6);
   --bg-image: 
   repeating-linear-gradient(
@@ -51,6 +45,7 @@
     #e7e7e7 0.1%,
     #1a1a1a
   );
+  --button-hover-text: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,9 +53,10 @@
   :root {
     --main-color: #00CC14;
     --bg-color: #000000;
-    --font-wght-regular: 465;
-    --font-wght-bold: 785;
+    --font-wght-regular: 'wght' 465;
+    --font-wght-bold: 'wght' 785;
     --header-button-hover-color: rgb(0, 122, 0, 0.6);
+    --button-hover-text: #00CC14;
     --bg-image: 
       repeating-linear-gradient(
         to right,
