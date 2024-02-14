@@ -352,6 +352,26 @@ dialog::backdrop {
   }
 }
 
+@media (width <= 375px) {
+  .header {
+    padding-block-start: 120px;
+  }
+
+  .floppy {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .button {
+    flex-direction: column;
+  }
+
+  .save__button {
+    inline-size: 306px;
+    padding: 15px 0;
+  }
+}
+
 @media (width <= 768px) {
   .page {
     background-attachment: unset;
