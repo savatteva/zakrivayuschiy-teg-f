@@ -69,14 +69,15 @@ body:has(dialog[open]) {
 }
 
 .theme-menu__button:disabled::before {
+  content: '▶';
   animation: header-menu 0.5s infinite ease-in-out alternate;
-}
+} 
 
 .nav_button {
   position: relative;
 }
 
-.nav_button::after  {
+.nav_button::after {
   content: '';
   display: block;
   background-color: var(--header-button-hover-color);
@@ -95,10 +96,6 @@ body:has(dialog[open]) {
 
 .theme-menu__button:disabled {
   pointer-events: none;
-}
-
-.theme-menu__button:disabled::before {
-  content: '▶';
 }
 
 .theme-menu__button:before {
