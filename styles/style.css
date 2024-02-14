@@ -10,11 +10,11 @@ body:has(dialog[open]) {
   line-height: 21px;
   color: var(--main-color);
   background-color: var(--bg-color);
-  background-attachment: fixed;
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
