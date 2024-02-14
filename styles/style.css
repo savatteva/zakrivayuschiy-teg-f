@@ -13,6 +13,8 @@ body:has(dialog[open]) {
   background-attachment: fixed;
   background-image: var(--bg-image);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,6 +67,11 @@ body:has(dialog[open]) {
   display: grid;
   grid-template-columns: 16px auto;
   gap: 4px;
+  transition: color 0.3s ease;
+}
+
+.theme-menu__button:disabled {
+  color: var(--header-button-hover-color);
   transition: color 0.3s ease;
 }
 
@@ -164,7 +171,7 @@ body:has(dialog[open]) {
   text-shadow: 1px var(--bg-color);
   font-size: 14px;
   color: var(--main-color);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 @supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
@@ -342,8 +349,7 @@ dialog::backdrop {
   }
 
   .theme-menu__button:focus,
-  .theme-menu__button:hover, 
-  .theme-menu__button:disabled {
+  .theme-menu__button:hover {
     color: var(--header-button-hover-color);
     transition: color 0.3s ease;
   }
