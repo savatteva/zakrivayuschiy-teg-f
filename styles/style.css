@@ -351,6 +351,6 @@ dialog::backdrop {
 
 @media (width <= 768px) {
   .page {
-    background-attachment: none;
+    background-attachment: unset;
   }
 }
