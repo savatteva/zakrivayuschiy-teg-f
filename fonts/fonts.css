@@ -14,14 +14,3 @@
   font-display: swap;
   font-weight: 400 785;
 }
-
-@supports (font-variation-settings: normal) {
-  .card__heading {
-    font-family: 'Inter', sans-serif;
-    font-variation-settings: var(--font-wght-bold);
-  }
-
-  .page {
-    font-weight: var(--font-wght-regular);
-  }
-}

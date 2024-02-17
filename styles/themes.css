@@ -4,7 +4,6 @@
   --button-hover-text: #00CC14;
   --font-wght-regular: 'wght' 465;
   --font-wght-bold: 'wght' 785;
-  --header-button-hover-color: rgb(0, 122, 0, 0.6);
   --bg-image: 
   repeating-linear-gradient(
     to right,
@@ -28,7 +27,6 @@
   --bg-color: #FFFFFF;
   --font-wght-regular: 'wght' 400;
   --font-wght-bold: 'wght' 700;
-  --header-button-hover-color: rgb(102,102,102, 0.6);
   --bg-image: 
   repeating-linear-gradient(
     to right,
@@ -55,7 +53,6 @@
     --bg-color: #000000;
     --font-wght-regular: 'wght' 465;
     --font-wght-bold: 'wght' 785;
-    --header-button-hover-color: rgb(0, 122, 0, 0.6);
     --button-hover-text: #00CC14;
     --bg-image: 
       repeating-linear-gradient(
