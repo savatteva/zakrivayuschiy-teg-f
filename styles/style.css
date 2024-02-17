@@ -110,6 +110,7 @@
 
 .card__icon-button {
   border: 2px solid transparent;
+  transition: 0.3s ease;
 }
 
 .main {
@@ -168,7 +169,7 @@
 
 @supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
   .image__label {
-    text-shadow: 1px 1px 0 var(--bg-color);
+    -webkit-text-stroke: 1px 1px 0 var(--bg-color);
     text-stroke: 1px var(--bg-color);
     text-shadow: none;
   }
@@ -187,10 +188,6 @@
   align-items: center;
   gap: 5px;
   justify-self: flex-end;
-}
-
-.card__icon-button {
-  transition: 0.3s ease;
 }
 
 .button {
@@ -236,10 +233,6 @@
   font-size: 14px;
   line-height: 90%;
   position: relative;
-}
-
-.button__text,
-.floppy {
   color: var(--button-hover-text);
   z-index: 1;
   mix-blend-mode: difference;
