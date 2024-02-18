@@ -81,14 +81,15 @@
   content: '';
   display: block;
   block-size: 2px;
-  inline-size: 100%;
+  inline-size: calc(100% - 20px);
   position: absolute;
   transform: scaleX(0);
-  bottom: -3px;
   transition: transform 0.3s ease;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  inset-block-end: -3px;
+  inset-inline-end: 0;
   transform-origin: left;
+  background-color: var(--main-color);
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -169,7 +170,7 @@
 
 @supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
   .image__label {
-    -webkit-text-stroke: 1px 1px 0 var(--bg-color);
+    -webkit-text-stroke: 1px var(--bg-color);
     text-stroke: 1px var(--bg-color);
     text-shadow: none;
   }
@@ -196,6 +197,7 @@
   justify-content: center;
   border: 2px solid var(--main-color);
   cursor: pointer;
+  font-size: 14px;
   background-color: var(--bg-color);
   position: relative;
 }
@@ -229,13 +231,12 @@
 
 .button__text,
 .floppy {
-  font-family: var(--accent-text);
-  font-size: 14px;
-  line-height: 90%;
-  position: relative;
   color: var(--button-hover-text);
   z-index: 1;
   mix-blend-mode: difference;
+  font-family: var(--accent-text);
+  font-size: 14px;
+  line-height: 90%;
 }
 
 .save__button {
@@ -248,16 +249,17 @@
   block-size: 21px;
 }
 
-.dialog {
+.dialog[open] {
   text-transform: uppercase;
   font-family: var(--accent-text);
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 30px;
+  padding: 30px 29px;
   color: var(--main-color);
   background-color: var(--bg-color);
   border: 2px solid var(--main-color);
+  font-size: 14px;
 }
 
 .dialog__title {
@@ -265,22 +267,23 @@
   gap: 20px;
   align-items: center;
   font-size: 14px;
-  line-height: 150%;
 }
 
 .dialog__floppy {
+  display: inline;
   inline-size: 39px;
-  aspect-ratio: 1/1;
+  block-size: 39px;
 }
 
 .dialog__text {
   max-inline-size: 234px;
+  line-height: 150%;
 }
 
 .dialog__button {
-  padding: 12.5px 0;
+  padding: 10px 0;
   width: 100%;
-  max-block-size: 38px;
+  text-transform: inherit;
 }
 
 dialog::backdrop {
@@ -321,19 +324,26 @@ dialog::backdrop {
   }
 
   .theme-menu__button:hover,
-  .theme-menu__button:disabled,
   .theme-menu__button:focus-visible {
     opacity: 0.6;
-    transition: opacity 0.3s ease;
   }
 }
 
 @media (width <= 375px) {
+  :root {
+    --header-logo-size: clamp(2.6875rem, 0.5446rem + 10.7143vw, 3.0625rem);
+    --section-size: 100%;
+  }
+
+  .dialog[open] {
+    padding: 29px 41px;
+  }
+
   .header {
     padding-block-start: 120px;
   }
-  
-  .floppy {
+
+  .save__button .floppy {
     inline-size: 28px;
     block-size: 28px;
   }
@@ -350,7 +360,6 @@ dialog::backdrop {
 
 @supports (font-variation-settings: normal) {
   .card__heading {
-    font-family: 'Inter', sans-serif;
     font-variation-settings: var(--font-wght-bold);
   }
 

@@ -72,9 +72,12 @@
   opacity: 0;
 }
 
-.like-icon.is-liked .contour,
-.like-icon.is-liked .main-body {
+.like-icon.is-liked .contour {
   transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s 0.05s linear;
 }
 
 .heart {
