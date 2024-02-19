@@ -22,8 +22,15 @@
       #e7e7e7 0.01%,
       #1a1a1a
     );
-  --section-size: clamp(22.857rem, 33.929vw + 15.102rem, 50rem);
+  --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   --button-hover-text: #FFFFFF;
   --header-logo-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --header-title-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+@media (width <= 375px) {
+  :root {
+    --header-logo-size: clamp(2.6875rem, 0.5446rem + 10.7143vw, 3.0625rem);
+    --section-size: 100%;
+  }
 }

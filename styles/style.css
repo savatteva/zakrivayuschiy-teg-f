@@ -89,7 +89,6 @@
   inset-inline-end: 0;
   transform-origin: left;
   background-color: var(--main-color);
-  opacity: 0.6;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -330,10 +329,6 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-  :root {
-    --header-logo-size: clamp(2.6875rem, 0.5446rem + 10.7143vw, 3.0625rem);
-    --section-size: 100%;
-  }
 
   .dialog[open] {
     padding: 29px 41px;
